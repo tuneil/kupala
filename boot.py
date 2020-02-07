@@ -17,8 +17,10 @@ def download_and_install_update_if_available():
     o.download_and_install_update_if_available('McDonalds', 'eternity8')
 
 def install_packages():
-    upip.install('micropython-umqtt.simple')
-    upip.install('micropython-umqtt.robust')
+    try:
+        import umqtt.robust
+    except:
+        upip.install('micropython-umqtt.robust')
 
 if __name__ == "__main__":
     do_connect()
