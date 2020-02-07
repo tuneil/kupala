@@ -1,7 +1,6 @@
 import network
-import otaUpdate
 import upip
-from ota_update.main.ota_updater import OTAUpdater
+from otaUpdate import OTAUpdater
 
 def do_connect():
     wlan = network.WLAN(network.STA_IF)
