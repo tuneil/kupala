@@ -1,7 +1,6 @@
 import network
 import upip
 from app.otaUpdate import OTAUpdater
-import app.app
 
 def do_connect():
     wlan = network.WLAN(network.STA_IF)
@@ -14,7 +13,8 @@ def do_connect():
     print("network config:", wlan.ifconfig())
 
 def download_and_install_update_if_available():
-    o = OTAUpdater('https://github.com/tuneil/kupala.git')
+    o = OTAUpdater('https://github.com/tuneil/kupala')
+    o.check_for_update_to_install_during_next_reboot()
     o.download_and_install_update_if_available('McDonalds', 'eternity8')
 
 def install_packages():
