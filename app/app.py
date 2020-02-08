@@ -18,7 +18,7 @@ def publish():
             temp = "NA"
             hum = "NA"
             pres = "NA"
-        msg = "{'temp': '{}', 'hum': '{}', 'pres': '{}'  }".format(temp, hum, pres)
+        msg = "temp={},hum={},pres={}".format(temp, hum, pres)
         client.publish(b"v1/devices/ESP32/telemetry", msg)
         time.sleep(30)
 
