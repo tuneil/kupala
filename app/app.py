@@ -5,6 +5,7 @@ import gc
 import app.bme280v2 as bme280
 
 client = MQTTClient("esp32-01", "iot.korivka.net")
+i2c = I2C(scl=Pin(22), sda=Pin(21), freq=10000)
 
 def publish():
     while True:
