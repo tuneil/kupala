@@ -2,13 +2,13 @@ from umqtt.robust import MQTTClient
 from machine import Pin, I2C
 import utime as time
 import gc
-import bme280v2
+import app.bme280v2 as bme280
 
 client = MQTTClient("esp32-01", "iot.korivka.net")
 
 def publish():
     while True:
-        bme = bme280v2.BME280(i2c=i2c)
+        bme = bme280.BME280(i2c=i2c)
         temp = bme.temperature
         hum = bme.humidity
         pres = bme.pressure
