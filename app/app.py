@@ -12,7 +12,7 @@ def publish():
         temp = bme.temperature
         hum = bme.humidity
         pres = bme.pressure
-        msg = "{'temp': '{}', 'hum': '{}', 'pres': '{}'  }'.format(temp, hum, pres)
+        msg = "{'temp': '{}', 'hum': '{}', 'pres': '{}'  }".format(temp, hum, pres)
         client.publish(b"v1/devices/ESP32/telemetry", msg)
         time.sleep(30)
 
