@@ -15,9 +15,9 @@ def publish():
             hum = bme.humidity
             pres = bme.pressure
         except:
-            temp = NA
-            hum = NA
-            pres = NA
+            temp = "NA"
+            hum = "NA"
+            pres = "NA"
         msg = "{'temp': '{}', 'hum': '{}', 'pres': '{}'  }".format(temp, hum, pres)
         client.publish(b"v1/devices/ESP32/telemetry", msg)
         time.sleep(30)
