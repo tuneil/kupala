@@ -18,7 +18,7 @@ def publish():
             temp = "NA"
             hum = "NA"
             pres = "NA"
-        msg = json.dumps(dict('temp'=temp, 'hum'=hum, 'pres'=pres))
+        msg = json.dumps(dict(temp=temp, hum=hum, pres=pres))
         print(msg)
         client.publish(b"v1/devices/ESP32/telemetry", msg)
         time.sleep(30)
