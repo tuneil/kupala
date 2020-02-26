@@ -1,6 +1,5 @@
 import network
 import upip
-import app.app
 from app.otaUpdate import OTAUpdater
 
 def do_connect():
@@ -28,4 +27,4 @@ if __name__ == "__main__":
     do_connect()
     download_and_install_update_if_available()
     install_packages()
-    
+    import app.app    
