@@ -3,6 +3,9 @@ import upip
 from app.otaUpdate import OTAUpdater
 
 def do_connect():
+    '''
+    Connect to local hot spot WiFi
+    '''
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     if not wlan.isconnected():
@@ -13,6 +16,10 @@ def do_connect():
     print("network config:", wlan.ifconfig())
 
 def download_and_install_update_if_available():
+    '''
+    Check for new releases at 
+    https://github.com/tuneil/kupala
+    '''
     o = OTAUpdater('https://github.com/tuneil/kupala')
     o.check_for_update_to_install_during_next_reboot()
     o.download_and_install_update_if_available('McDonalds', 'eternity8')
@@ -27,4 +34,4 @@ if __name__ == "__main__":
     do_connect()
     download_and_install_update_if_available()
     install_packages()
-    import app.app    
+    import app.app
